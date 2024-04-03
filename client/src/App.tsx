@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Payment } from "./components/Payment";
 
 const App = () => {
   const [user, setUser] = useState<string>("");
@@ -67,15 +68,15 @@ const App = () => {
     }
   };
 
-  const handlePayment = async () => {
-    const response = await fetch("http://localhost:3001/payments/create-checkout-session", {
-      method: "POST",
-    })
-    const data = await response.json();
-    console.log(data);
-    window.location = data.url;
+  // const handlePayment = async () => {
+  //   const response = await fetch("http://localhost:3001/payments/create-checkout-session", {
+  //     method: "POST",
+  //   })
+  //   const data = await response.json();
+  //   console.log(data);
+  //   window.location = data.url;
     
-  };
+  // };
 
   return (
     <>
@@ -84,7 +85,8 @@ const App = () => {
       <button onClick={register}>registrera</button>
       <button onClick={login}>logga in</button>
       <button onClick={logout}>logga ut</button>
-      <button onClick={handlePayment}>Ge mig pengar!!</button>
+      <Payment />
+      {/* <button onClick={handlePayment}>Ge mig pengar!!</button> */}
     </>
   );
 };
