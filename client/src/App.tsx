@@ -55,6 +55,7 @@ const App = () => {
     }
   };
 
+  
   const logout = async () => {
     const response = await fetch("http://localhost:3001/api/auth/logout", {
       method: "POST",
@@ -66,6 +67,16 @@ const App = () => {
     }
   };
 
+  const handlePayment = async () => {
+    const response = await fetch("http://localhost:3001/payments/create-checkout-session", {
+      method: "POST",
+    })
+    const data = await response.json();
+    console.log(data);
+    window.location = data.url;
+    
+  };
+
   return (
     <>
       <h1>Webbshoppen</h1>
@@ -73,6 +84,7 @@ const App = () => {
       <button onClick={register}>registrera</button>
       <button onClick={login}>logga in</button>
       <button onClick={logout}>logga ut</button>
+      <button onClick={handlePayment}>Ge mig pengar!!</button>
     </>
   );
 };
