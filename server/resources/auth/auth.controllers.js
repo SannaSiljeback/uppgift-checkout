@@ -15,6 +15,8 @@ const register = async (req, res) => {
     return res.status(400).json("User already exists");
   }
 
+  //skapa kund i stripe
+
   //kryptera lösen
   const hashedPassword = await bcrypt.hash(password, 10);
 
@@ -22,7 +24,7 @@ const register = async (req, res) => {
   const newUser = {
     email,
     password: hashedPassword,
-  };
+  }; //kunden ska ha ett id
   users.push(newUser);
  
   await fs.writeFile("./data/users.json", JSON.stringify(users, null, 2));

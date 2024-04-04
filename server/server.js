@@ -7,6 +7,7 @@ require("dotenv").config();
 const userRouter = require("./resources/users/users.router");
 const authRouter = require("./resources/auth/auth.router");
 const stripeRouter = require("./stripe/stripe.router");
+// const productsRouter = require("./resources/products/products.router");
 
 const app = express();
 
@@ -27,6 +28,7 @@ app.use(
 app.use("/api/users", userRouter);
 app.use("/api/auth", authRouter);
 app.use("/payments", stripeRouter);
+// app.use("/products", productsRouter);
 
 //app.get /users blir routern, allt som har med användare att göra läggs i den
 app.get("/users", (req, res) => {

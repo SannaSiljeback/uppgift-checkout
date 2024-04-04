@@ -24,7 +24,7 @@ export const Payment = () => {
 
     return (
         <>
-            <button onClick={handlePayment}>Ge mig pengar!!</button>
+            <button onClick={handlePayment}>Köp</button>
         </>
     );
 }

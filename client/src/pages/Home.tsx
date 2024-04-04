@@ -5,7 +5,9 @@ import { Login } from "../components/Login";
 import { Logout } from "../components/Logout";
 
 export const Home = () => {
-    const [user, setUser] = useState<string>("");
+  const [user, setUser] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
 
   useEffect(() => {
     const authorize = async () => {
@@ -23,15 +25,24 @@ export const Home = () => {
     authorize();
   }, []);
 
+  //log in och log out komponent ist för strängarna
 
-    return (
-        <>
-        <h1>Kaffeshoppen</h1>
-        <h2>{user ? "inloggad" + user : "utloggad"}</h2>
-        <Register/>
-        <Login setUser={setUser} />
-        <Logout setUser={setUser}/>
-        <Payment/>
-        </>
-    );
+  //rendera in produkterna
+
+  return (
+    <>
+      <h1>Kaffeshoppen</h1>
+      <h2>{user ? "inloggad" + user : "utloggad"}</h2>
+      <Register />
+      <Login
+        setUser={setUser}
+        email={email}
+        setEmail={setEmail}
+        password={password}
+        setPassword={setPassword}
+      />
+      <Logout setUser={setUser} />
+      <Payment />
+    </>
+  );
 };

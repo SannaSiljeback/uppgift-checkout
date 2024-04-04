@@ -2,7 +2,7 @@ interface ILogoutProps {
   setUser: (user: string) => void;
 }
 
-export const Logout: React.FC<ILogoutProps> = ({setUser}) => {
+export const Logout = ({setUser}: ILogoutProps) => {
     const handleLogout = async () => {
         const response = await fetch("http://localhost:3001/api/auth/logout", {
           method: "POST",
