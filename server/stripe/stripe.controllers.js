@@ -11,8 +11,8 @@ const createCheckoutSession = async (req, res) => {
         quantity: 1,
       },
     ],
-    success_url: "http://localhost:5173", //http://localhost:5173/confirmation, vill hamna på någon slags confirmayion sida 
-    cancel_url: "http://localhost:5173", //samma med denna?
+    success_url: "http://localhost:5173/confirmation",
+    cancel_url: "http://localhost:5173", //ska denna också gå någonstans??
   });
 
     res.status(200).json({url: session.url});
