@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { Payment } from "./components/Payment";
+// import { useEffect, useState } from "react";
+// import { Payment } from "./components/Payment";
 
 const App = () => {
   // const [user, setUser] = useState<string>("");
