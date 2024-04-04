@@ -23,20 +23,15 @@ export const Home = () => {
     authorize();
   }, []);
 
-  //log in och log out komponent ist för strängarna
-
   //rendera in produkterna
+
+  //payment kommer vara inne i en kundkorg, kassa/kundkorg ska visas här
 
   return (
     <>
       <h1>Kaffeshoppen</h1>
-      <h2>{user ? "inloggad" + user : "utloggad"}</h2>
-      <Register/>
-      <Login
-        setUser={setUser}
-        
-      />
-      <Logout setUser={setUser} />
+      {!user ? <Login setUser={setUser} /> : <Logout setUser={setUser} />}
+      {!user && <Register />}
       <Payment />
     </>
   );
