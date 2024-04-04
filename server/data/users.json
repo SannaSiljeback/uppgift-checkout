@@ -2,5 +2,9 @@
   {
     "email": "fakeEmail2@fake.com",
     "password": "$2b$10$uuWku4CbEqDMwNgmFcNpdeuBjl2j/NBzIHzoRgqjYnCY/0AsM8UxO"
+  },
+  {
+    "email": "sanna@sanna.se",
+    "password": "$2b$10$ssvJHb0aoNVcMRpSgLJTZO96hHaNDZUGMfgVWkFsOtt0o1WEhK2Aa"
   }
 ]

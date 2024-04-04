@@ -6,8 +6,6 @@ import { Logout } from "../components/Logout";
 
 export const Home = () => {
   const [user, setUser] = useState<string>("");
-  const [email, setEmail] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
 
   useEffect(() => {
     const authorize = async () => {
@@ -33,13 +31,10 @@ export const Home = () => {
     <>
       <h1>Kaffeshoppen</h1>
       <h2>{user ? "inloggad" + user : "utloggad"}</h2>
-      <Register />
+      <Register/>
       <Login
         setUser={setUser}
-        email={email}
-        setEmail={setEmail}
-        password={password}
-        setPassword={setPassword}
+        
       />
       <Logout setUser={setUser} />
       <Payment />
