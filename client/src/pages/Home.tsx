@@ -30,7 +30,7 @@ export const Home = () => {
         <h2>{user ? "inloggad" + user : "utloggad"}</h2>
         <Register/>
         <Login setUser={setUser} />
-        <Logout/>
+        <Logout setUser={setUser}/>
         <Payment/>
         </>
     );
