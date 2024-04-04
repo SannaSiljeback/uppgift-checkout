@@ -3,6 +3,7 @@ import { Payment } from "../components/Payment";
 import { Register } from "../components/Register";
 import { Login } from "../components/Login";
 import { Logout } from "../components/Logout";
+import { Products } from "../components/Products";
 
 export const Home = () => {
   const [user, setUser] = useState<string>("");
@@ -33,6 +34,7 @@ export const Home = () => {
       {!user ? <Login setUser={setUser} /> : <Logout setUser={setUser} />}
       {!user && <Register />}
       <Payment />
+      <Products />
     </>
   );
 };

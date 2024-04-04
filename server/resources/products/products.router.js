@@ -2,6 +2,6 @@ const express = require("express");
 const { getProducts } = require("./products.controllers");
 const router = express.Router();
 
-router.get("/products", getProducts);
+router.get("/", getProducts); //varför funkar ej med bara "/"
 
-exports.router = router;
+module.exports = router;
