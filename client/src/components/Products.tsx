@@ -3,8 +3,12 @@ import { useEffect, useState } from "react";
 interface IProduct {
     id: string;
     name: string;
-    price: string;
     images: string[];
+    price: number;
+
+    default_price: {
+        unit_amount: number;
+    };
 }
 
 export const Products = () => {
@@ -18,10 +22,13 @@ export const Products = () => {
     const fetchProducts = async () => {
         try {
             const response = await fetch("http://localhost:3001/products");
-            const data = await response.json();
-            console.log(data);   
+            const fetchedData = await response.json();
+            console.log(fetchedData);   
 
-            const productsList = data.data; 
+            const productsList: IProduct[] = fetchedData.data.map((product: IProduct) => ({
+                ...product,
+                price: product.default_price.unit_amount / 100 // Stripe använder cent standardenhet, delar med 100 för att få priset i SEK
+            }));
             
             setProducts(productsList);
         } catch (error) {
@@ -35,7 +42,7 @@ export const Products = () => {
         {products.map(product => (
             <div key={product.id}>
                 <h3>{product.name}</h3>
-                <p>{product.price}</p>
+                <p>{product.price} SEK</p>
                 {product.images && product.images.map((image, index) => (
                     <img key={index} src={image} alt={product.name} style={{ width: "200px" }} />
 

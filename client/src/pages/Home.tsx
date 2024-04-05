@@ -24,13 +24,12 @@ export const Home = () => {
     authorize();
   }, []);
 
-  //rendera in produkterna
 
   //payment kommer vara inne i en kundkorg, kassa/kundkorg ska visas här
 
   return (
     <>
-      <h1>Kaffeshoppen</h1>
+      <h1>Latitude Roasters</h1>
       {!user ? <Login setUser={setUser} /> : <Logout setUser={setUser} />}
       {!user && <Register />}
       <Payment />
