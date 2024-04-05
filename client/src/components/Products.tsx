@@ -45,8 +45,8 @@ export const Products = () => {
                 <p>{product.price} SEK</p>
                 {product.images && product.images.map((image, index) => (
                     <img key={index} src={image} alt={product.name} style={{ width: "200px" }} />
-
                  ))}
+                 <button>köp kaffet!</button>
             </div>
         ))}
         </>

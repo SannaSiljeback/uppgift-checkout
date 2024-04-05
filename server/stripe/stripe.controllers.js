@@ -8,6 +8,7 @@ const createCheckoutSession = async (req, res) => {
 
   const session = await stripe.checkout.sessions.create({
     mode: "payment",
+    customer: "cus_PruslmAylNykoy", //stripe ID här som ej är hårdkodat
     line_items: cart.map(item => {
       return {
         price: item.product,
@@ -22,4 +23,14 @@ const createCheckoutSession = async (req, res) => {
     //spara session id i localstorgae för att sen när man kommer till confirmation sidan, hämta ut det från localstorgae hämta ut sessionen också har vi massa info, det blir flödet
 };
 
-module.exports = { createCheckoutSession };
+const verifySession = async (req, res) => {
+  const stripe = initStripe();
+  const sessionId = req.body.sessionId;
+ 
+  
+  const session = await stripe.checkout.sessions.retrieve(sessionId);
+
+  console.log(session);
+};
+
+module.exports = { createCheckoutSession, verifySession };
