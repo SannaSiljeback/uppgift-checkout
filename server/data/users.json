@@ -1,18 +1,7 @@
 [
   {
-    "email": "fakeEmail2@fake.com",
-    "password": "$2b$10$uuWku4CbEqDMwNgmFcNpdeuBjl2j/NBzIHzoRgqjYnCY/0AsM8UxO"
-  },
-  {
     "email": "sanna@sanna.se",
-    "password": "$2b$10$ssvJHb0aoNVcMRpSgLJTZO96hHaNDZUGMfgVWkFsOtt0o1WEhK2Aa"
-  },
-  {
-    "email": "hej",
-    "password": "$2b$10$AATyK/1p/.wMQjJuHjCY5./CVvPzDiR0PF04OKcidP2wwdpgv8qX."
-  },
-  {
-    "email": "hejdå",
-    "password": "$2b$10$EaZMORM5ZHxzpTQz65cywuzi2GghupQEVIyYob2iwrvY.Cs0yhHJu"
+    "password": "$2b$10$qe2Sfh0bsbr6SusSsJK1e.Afg8wG6P.1IM.aoMtYdHcICDyC8u0/u",
+    "stripeId": "cus_PruslmAylNykoy"
   }
 ]
