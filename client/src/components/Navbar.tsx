@@ -2,12 +2,14 @@ import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Login } from "./Login";
 import { Logout } from "./Logout";
-import { Payment } from "./Payment";
 import { Register } from "./Register";
 
+import { BsCart2 } from "react-icons/bs";
+import "../styles/navbar.css";
+import { useCart } from "../context/CartContext";
 
 export const Navbar = () => {
-
+  const { cart } = useCart();
 
   const [user, setUser] = useState<string>("");
 
@@ -36,11 +38,19 @@ export const Navbar = () => {
             <NavLink to="/">Home</NavLink>
           </li>
           <li>
-          {!user ? <Login setUser={setUser} /> : <> <Logout setUser={setUser} /> <li><Payment /></li> </> }
+            {!user ? ( <Login setUser={setUser} /> ) : ( <> <Logout setUser={setUser} /> </> )}
           </li>
+          <li>{ !user && <Register /> }</li>
+          {user && (
           <li>
-          {!user && <Register />}
+            <NavLink to="/cart">
+            <div className="cart">
+              <BsCart2 />
+              <p>{cart.length}</p>
+            </div>
+            </NavLink>
           </li>
+          )}
         </ul>
       </nav>
     </>

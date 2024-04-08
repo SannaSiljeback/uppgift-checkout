@@ -3,6 +3,7 @@ import { Confirmation } from "./pages/Confirmation";
 import { Home } from "./pages/Home";
 import { Layout } from "./pages/Layout";
 import { NotFound } from "./pages/NotFound";
+import { Cart } from "./components/Cart";
 
 export const Router = createBrowserRouter([{
     path: "/",
@@ -17,6 +18,11 @@ export const Router = createBrowserRouter([{
         {
             path: "/confirmation",
             element: <Confirmation />,
+            errorElement: <NotFound />,
+        },
+        {
+            path: "/cart",
+            element: <Cart />,
             errorElement: <NotFound />,
         }
     ]
