@@ -32,7 +32,7 @@ export const Products = () => {
         {products.map(product => (
             <div key={product.id}>
                 <h3>{product.name}</h3>
-                <p>{product.description}</p>
+                {/* <p>{product.description}</p> */}
                 <p>{product.default_price.unit_amount / 100} SEK</p>
                 {/* {product.images && product.images.map((image, index) => (
                     <img key={index} src={image} alt={product.name} style={{ width: "200px" }} />

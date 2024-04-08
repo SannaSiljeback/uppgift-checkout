@@ -3,10 +3,10 @@
 }
 
 .cart svg {
-    font-size: 40px;
+    font-size: 30px;
 }
 
-.cart p {
+/* .cart p {
     position: absolute;
     right: -10px;
     top: -2px;
@@ -20,4 +20,4 @@
     justify-content: center;
     align-items: center;
 
-}
+} */

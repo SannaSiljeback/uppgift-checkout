@@ -1,8 +1,10 @@
 import { useCart } from "../context/CartContext";
+import { BsCart2 } from "react-icons/bs";
+import "../styles/cart.css";
 
 export const Payment = () => {
   const { cart } = useCart();
-  
+
   const handlePayment = async () => {
     const response = await fetch(
       "http://localhost:3001/payments/create-checkout-session",
@@ -22,7 +24,10 @@ export const Payment = () => {
 
   return (
     <>
-      <button onClick={handlePayment}>Köp</button>
+      <div className="cart" onClick={handlePayment}>
+        <BsCart2 />
+        <p>{cart.length}</p>
+      </div>
     </>
   );
 };
