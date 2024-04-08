@@ -9,8 +9,6 @@ const getProducts = async (req, res) => {
       expand: ["data.default_price"],
     });
 
-
-
     res.status(200).json(products);
   } catch (error) {
     console.error("error", error);

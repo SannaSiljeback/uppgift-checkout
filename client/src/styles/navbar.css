@@ -1,0 +1,23 @@
+.cart {
+    position: relative;
+}
+
+.cart svg {
+    font-size: 40px;
+}
+
+.cart p {
+    position: absolute;
+    right: -10px;
+    top: -2px;
+    background-color: rgb(16, 16, 16);
+    color: white;
+    height: 1rem;
+    width: 1rem;
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
