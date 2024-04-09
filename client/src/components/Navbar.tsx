@@ -7,6 +7,7 @@ import { Register } from "./Register";
 import { BsCart2 } from "react-icons/bs";
 import "../styles/navbar.css";
 import { useCart } from "../context/CartContext";
+import { Cart } from "./Cart";
 
 export const Navbar = () => {
   const { cart } = useCart();
@@ -29,6 +30,26 @@ export const Navbar = () => {
     authorize();
   }, []);
 
+
+  const [showLogin, setShowLogin] = useState(false);
+
+  const toggleLogin = () => {
+    setShowLogin(!showLogin);
+  }
+
+  const [showRegister, setShowRegister] = useState(false);
+
+  const toggleRegister = () => {
+    setShowRegister(!showRegister);
+  }
+
+  const [showCart, setShowCart] = useState(false);
+
+  const toggleCart = () => {
+    setShowCart(!showCart);
+  }
+
+
   //om all quantity ska visas så ska det vara en reduce på p taggen med cart.length eller något liknande
   return (
     <>
@@ -38,21 +59,34 @@ export const Navbar = () => {
             <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            {!user ? ( <Login setUser={setUser} /> ) : ( <> <Logout setUser={setUser} /> </> )}
+            {!user ? (
+              <button onClick={toggleLogin}>Visa login</button>
+            
+            ) : (
+              <>
+                {" "}
+                <Logout setUser={setUser} />{" "}
+              </>
+            )}
           </li>
-          <li>{ !user && <Register /> }</li>
-          {user && (
+          {showLogin && <Login setUser={setUser} />}
+
+          <li>{!user && <button onClick={toggleRegister}>Visa regrister</button> }</li>
+          {showRegister && <Register />}
+
           <li>
-            <NavLink to="/cart">
-            <div className="cart">
+            {user && (
+              <div className="cart" onClick={toggleCart}>
               <BsCart2 />
-              <p>{cart.length}</p>
+                <p>{cart.length}</p>
             </div>
-            </NavLink>
+            )}
           </li>
-          )}
+          {showCart && <Cart />}
+
         </ul>
       </nav>
+      
     </>
   );
 };
