@@ -2,7 +2,7 @@ import { useCart } from "../context/CartContext";
 import { Payment } from "./Payment";
 
 export const Cart = () => {
-  const { cart } = useCart();
+  const { cart, removeFromCart } = useCart();
 
   return (
     <>
@@ -21,6 +21,7 @@ export const Cart = () => {
               {product.quantity} st -{" "}
               {product.product.default_price.unit_amount / 100} SEK
             </p>
+            <button onClick={() => removeFromCart(product.product)}>ta bort</button>
           </div>
         ))}
       </ul>
