@@ -1,6 +1,4 @@
 import { useCart } from "../context/CartContext";
-import { BsCart2 } from "react-icons/bs";
-import "../styles/cart.css";
 
 export const Payment = () => {
   const { cart } = useCart();
@@ -14,6 +12,7 @@ export const Payment = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(cart),
+        credentials: "include",
       }
     );
     const data = await response.json();
@@ -24,10 +23,7 @@ export const Payment = () => {
 
   return (
     <>
-      <div className="cart" onClick={handlePayment}>
-        <BsCart2 />
-        <p>{cart.length}</p>
-      </div>
+      <button onClick={handlePayment}>Köp kundkorgen</button>
     </>
   );
 };

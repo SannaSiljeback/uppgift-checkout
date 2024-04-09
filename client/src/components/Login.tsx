@@ -46,7 +46,7 @@ export const Login = ({ setUser }: ILoginProps) => {
         placeholder="Email"
       />
       <input
-        type="text"
+        type="password"
         value={password}
         onChange={handlePassword}
         placeholder="Password"

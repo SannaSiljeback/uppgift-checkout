@@ -1,3 +1,4 @@
+const { log } = require("console");
 const initStripe = require("../stripe");
 const fs = require("fs").promises;
 
@@ -6,9 +7,11 @@ const createCheckoutSession = async (req, res) => {
 
   const stripe = initStripe();
 
+  // const user = req.session.user;
+
   const session = await stripe.checkout.sessions.create({
     mode: "payment",
-    customer: "cus_PruslmAylNykoy", //stripe ID här som ej är hårdkodat i framtiden
+    customer: req.session.user.stripeId, // va hårdkodad innan
     line_items: cart.map((item) => {
       return {
         price: item.product.default_price.id,
@@ -18,6 +21,7 @@ const createCheckoutSession = async (req, res) => {
     success_url: "http://localhost:5173/confirmation",
     cancel_url: "http://localhost:5173",
   });
+
 
   res.status(200).json({ url: session.url, sessionId: session.id });
   //spara session id i localstorgae för att sen när man kommer till confirmation sidan, hämta ut det från localstorgae hämta ut sessionen också har vi massa info, det blir flödet

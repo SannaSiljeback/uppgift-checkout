@@ -36,7 +36,7 @@ export const Register = () => {
         placeholder="Email"
       />
       <input
-        type="text"
+        type="password"
         value={password}
         onChange={handlePassword}
         placeholder="Password"
