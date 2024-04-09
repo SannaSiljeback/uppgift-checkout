@@ -12,6 +12,7 @@ export const Payment = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(cart),
+        credentials: "include",
       }
     );
     const data = await response.json();
