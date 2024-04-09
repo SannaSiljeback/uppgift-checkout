@@ -1,5 +1,7 @@
 import { useCart } from "../context/CartContext";
 import { Payment } from "./Payment";
+import { AiOutlineDelete } from "react-icons/ai";
+import "../styles/cart.css";
 
 export const Cart = () => {
   const { cart, removeFromCart } = useCart();
@@ -21,7 +23,9 @@ export const Cart = () => {
               {product.quantity} st -{" "}
               {product.product.default_price.unit_amount / 100} SEK
             </p>
-            <button onClick={() => removeFromCart(product.product)}>ta bort</button>
+            <div onClick={() => removeFromCart(product.product)} className="delete">
+              <AiOutlineDelete />
+            </div>
           </div>
         ))}
       </ul>

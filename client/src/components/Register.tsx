@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { BiUserCheck } from "react-icons/bi";
+import "../styles/register.css";
 
 export const Register = () => {
   const [email, setEmail] = useState<string>("");
@@ -41,7 +43,10 @@ export const Register = () => {
         onChange={handlePassword}
         placeholder="Password"
       />
-      <button onClick={handleRegister}>registrera</button>
+      <div onClick={handleRegister} className="register">
+        <BiUserCheck />
+      </div>
+  
     </>
   );
 };

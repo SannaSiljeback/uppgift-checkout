@@ -1,3 +1,6 @@
+import { CiLogout } from "react-icons/ci";
+import "../styles/logout.css";
+
 interface ILogoutProps {
   setUser: (user: string) => void;
 }
@@ -16,7 +19,9 @@ export const Logout = ({setUser}: ILogoutProps) => {
 
     return (
         <>
-        <button onClick={handleLogout}>logga ut</button>
+        <div className="logout" onClick={handleLogout}>
+          <CiLogout />
+        </div>
         </>
     );
 };

@@ -1,4 +1,8 @@
 import { useState } from "react";
+import "../styles/login.css";
+import { CiLogin } from "react-icons/ci";
+
+
 
 interface ILoginProps {
   setUser: (user: string) => void;
@@ -51,7 +55,9 @@ export const Login = ({ setUser }: ILoginProps) => {
         onChange={handlePassword}
         placeholder="Password"
       />
-      <button onClick={handleLogin}>logga in</button>
+      <div onClick={handleLogin} className="login">
+      <CiLogin />
+      </div>
     </>
   );
 };

@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { IProduct, useCart } from "../context/CartContext";
+import { BsBagPlus } from "react-icons/bs";
+import "../styles/products.css";
 
 export const Products = () => {
   const [products, setProducts] = useState<IProduct[]>([]);
@@ -36,7 +38,9 @@ export const Products = () => {
             />
           </div>
           <span>{product.default_price.unit_amount / 100} SEK</span>
-          <button onClick={() => addToCart(product)}>köp kaffet!</button>
+          <div onClick={() => addToCart(product)} className="buy">
+            <BsBagPlus />
+          </div>
         </div>
       ))}
     </>

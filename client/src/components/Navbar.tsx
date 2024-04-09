@@ -10,6 +10,10 @@ import "../styles/navbar.css";
 import { useCart } from "../context/CartContext";
 import { Cart } from "./Cart";
 
+import { BiSolidCoffeeBean } from "react-icons/bi";
+import { AiOutlineUser } from "react-icons/ai";
+import { AiOutlineUserAdd } from "react-icons/ai";
+
 export const Navbar = () => {
   const { cart } = useCart();
 
@@ -53,11 +57,21 @@ export const Navbar = () => {
       <nav>
         <ul>
           <li>
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/" className="home">
+              <BiSolidCoffeeBean />
+              <div>
+                  Home
+                </div>
+            </NavLink>
           </li>
           <li>
             {!user ? (
-              <button onClick={toggleLogin}>Visa login</button>
+              <div onClick={toggleLogin} className="login">
+                <AiOutlineUser />
+                <div>
+                  Log in
+                </div>
+              </div>
             ) : (
               <>
                 {" "}
@@ -65,12 +79,17 @@ export const Navbar = () => {
               </>
             )}
           </li>
-          {!user && showLogin && <Login setUser={setUser} />}
 
           <li>
-            {!user && <button onClick={toggleRegister}>Visa regrister</button>}
+            {!user && (
+              <div onClick={toggleRegister} className="register">
+                <AiOutlineUserAdd />
+                <div>
+                  Register
+                </div>
+              </div>
+            )}
           </li>
-          {!user && showRegister && <Register />}
 
           <li>
             {user && (
@@ -82,6 +101,8 @@ export const Navbar = () => {
           </li>
         </ul>
       </nav>
+      {!user && showLogin && <Login setUser={setUser} />}
+      {!user && showRegister && <Register />}
       {showCart && <Cart />}
     </>
   );
