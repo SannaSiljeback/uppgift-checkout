@@ -21,6 +21,9 @@ export const Logout = ({setUser}: ILogoutProps) => {
         <>
         <div className="logout" onClick={handleLogout}>
           <CiLogout />
+          <div>
+            Log out
+          </div>
         </div>
         </>
     );

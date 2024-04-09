@@ -96,6 +96,9 @@ export const Navbar = () => {
               <div className="cart" onClick={toggleCart}>
                 <CiShoppingBasket />
                 <p>{cart.length}</p>
+                <div>
+                  Cart
+                </div>
               </div>
             )}
           </li>
