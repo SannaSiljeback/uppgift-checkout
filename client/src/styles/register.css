@@ -1,3 +1,11 @@
-.register svg {
+.registerButton svg {
     font-size: 30px;
 }
+
+/* .registerButton:hover {
+    text-decoration: underline;
+  } */
+
+  /* .icon:hover {
+    cursor: pointer;
+  } */

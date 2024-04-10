@@ -1,3 +1,12 @@
 .delete svg {
     font-size: 25px;
 }
+
+.cartContainer {
+    display: flex;
+    /* justify-content: flex-end; */
+    align-items: flex-end;
+    flex-direction: column;
+    padding-right: 30px;
+    
+}

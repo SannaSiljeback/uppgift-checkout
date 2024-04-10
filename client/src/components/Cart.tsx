@@ -8,6 +8,7 @@ export const Cart = () => {
 
   return (
     <>
+    <div className="cartContainer">
       <h2>Your cart</h2>
       <ul>
         {cart.map((product) => (
@@ -30,6 +31,7 @@ export const Cart = () => {
       </ul>
 
       <Payment />
+      </div>
     </>
   );
 };

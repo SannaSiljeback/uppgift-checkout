@@ -41,6 +41,7 @@ export const Register = () => {
 
   return (
     <>
+    <div className="formContainer">
       <input
         type="text"
         value={email}
@@ -55,10 +56,11 @@ export const Register = () => {
         placeholder="Password"
         name="password"
       />
-      <div onClick={handleRegister} className="register">
-        <BiUserCheck />
+      <div onClick={handleRegister} className="registerButton">
+        <BiUserCheck className="icon"/>
       </div>
       {registerMessage && <p>{registerMessage}</p>}
+      </div>
     </>
   );
 };

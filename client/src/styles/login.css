@@ -1,3 +1,18 @@
-.login svg {
+.loginButton svg {
     font-size: 30px;
+}
+
+/* .loginButton:hover {
+    text-decoration: underline;
+  } */
+
+  .icon:hover {
+    cursor: pointer;
+  }
+
+.formContainer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 30px;
 }

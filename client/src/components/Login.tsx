@@ -44,6 +44,7 @@ export const Login = ({ setUser }: ILoginProps) => {
 
   return (
     <>
+    <div className="formContainer">
       <input
         type="text"
         value={email}
@@ -58,10 +59,11 @@ export const Login = ({ setUser }: ILoginProps) => {
         placeholder="Password"
         name="password"
       />
-      <div onClick={handleLogin} className="login">
-        <CiLogin />
+      <div onClick={handleLogin} className="loginButton">
+        <CiLogin className="icon"/>
       </div>
       {errorMessage && <p>{errorMessage}</p>}
+      </div>
     </>
   );
 };

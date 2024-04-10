@@ -19,6 +19,13 @@ export const Navbar = () => {
   const [showRegister, setShowRegister] = useState(false);
   const [showCart, setShowCart] = useState(false);
 
+  const [cartQuantity, setCartQuantity] = useState(0);
+
+  useEffect(() => {
+    const totalQuantity = cart.reduce((acc, item) => acc + item.quantity, 0);
+    setCartQuantity(totalQuantity);
+  }, [cart]);
+
   useEffect(() => {
     const authorize = async () => {
       const response = await fetch("http://localhost:3001/auth/authorize", {
@@ -47,8 +54,6 @@ export const Navbar = () => {
     setShowCart(!showCart);
   };
 
-  // TO DO
-  //om all quantity ska visas så ska det vara en reduce på p taggen med cart.length eller något liknande
   return (
     <>
       <nav>
@@ -86,7 +91,7 @@ export const Navbar = () => {
             {user && (
               <div className="cart" onClick={toggleCart}>
                 <CiShoppingBasket />
-                <p>{cart.length}</p>
+                <p>{cartQuantity}</p>
                 <div>Cart</div>
               </div>
             )}
