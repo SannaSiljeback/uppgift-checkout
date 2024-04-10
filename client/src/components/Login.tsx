@@ -2,8 +2,6 @@ import { useState } from "react";
 import "../styles/login.css";
 import { CiLogin } from "react-icons/ci";
 
-
-
 interface ILoginProps {
   setUser: (user: string) => void;
 }
@@ -11,6 +9,7 @@ interface ILoginProps {
 export const Login = ({ setUser }: ILoginProps) => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [errorMessage, setErrorMessage] = useState<string>("");
 
   const handleLogin = async () => {
     const response = await fetch("http://localhost:3001/api/auth/login", {
@@ -29,16 +28,18 @@ export const Login = ({ setUser }: ILoginProps) => {
     if (response.status === 200) {
       setUser(data);
     } else {
+      setErrorMessage("Wrong email and/or password");
       setUser("");
     }
   };
 
-  const handleEmail = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(event.target.value);
-  };
-
-  const handlePassword = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setPassword(event.target.value);
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+    if (name === "email") {
+      setEmail(value);
+    } else if (name === "password") {
+      setPassword(value);
+    }
   };
 
   return (
@@ -46,18 +47,21 @@ export const Login = ({ setUser }: ILoginProps) => {
       <input
         type="text"
         value={email}
-        onChange={handleEmail}
+        onChange={handleChange}
         placeholder="Email"
+        name="email"
       />
       <input
         type="password"
         value={password}
-        onChange={handlePassword}
+        onChange={handleChange}
         placeholder="Password"
+        name="password"
       />
       <div onClick={handleLogin} className="login">
-      <CiLogin />
+        <CiLogin />
       </div>
+      {errorMessage && <p>{errorMessage}</p>}
     </>
   );
 };

@@ -18,15 +18,15 @@ nav {
   }
 
   .home svg {
-    font-size: 40px;
+    font-size: 30px;
 }
 
 .login svg {
-    font-size: 40px;
+    font-size: 30px;
 }
 
 .register svg {
-    font-size: 40px;
+    font-size: 30px;
 }
 
 .cart {
@@ -34,7 +34,7 @@ nav {
 }
 
 .cart svg {
-    font-size: 50px;
+    font-size: 37px;
 }
 
 .cart p {
@@ -43,8 +43,8 @@ nav {
     top: -2px;
     background-color: rgb(16, 16, 16);
     color: white;
-    height: 1rem;
-    width: 1rem;
+    height: 0.2rem;
+    width: 0.2rem;
     padding: 10px;
     border-radius: 50%;
     display: flex;
