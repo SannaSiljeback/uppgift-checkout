@@ -47,7 +47,7 @@ export const Navbar = () => {
     setShowCart(!showCart);
   };
 
-  
+  // TO DO
   //om all quantity ska visas så ska det vara en reduce på p taggen med cart.length eller något liknande
   return (
     <>
@@ -56,18 +56,14 @@ export const Navbar = () => {
           <li>
             <NavLink to="/" className="home">
               <BiSolidCoffeeBean />
-              <div>
-                  Home
-                </div>
+              <div>Home</div>
             </NavLink>
           </li>
           <li>
             {!user ? (
               <div onClick={toggleLogin} className="login">
                 <AiOutlineUser />
-                <div>
-                  Log in
-                </div>
+                <div>Log in</div>
               </div>
             ) : (
               <>
@@ -81,9 +77,7 @@ export const Navbar = () => {
             {!user && (
               <div onClick={toggleRegister} className="register">
                 <AiOutlineUserAdd />
-                <div>
-                  Register
-                </div>
+                <div>Register</div>
               </div>
             )}
           </li>
@@ -93,9 +87,7 @@ export const Navbar = () => {
               <div className="cart" onClick={toggleCart}>
                 <CiShoppingBasket />
                 <p>{cart.length}</p>
-                <div>
-                  Cart
-                </div>
+                <div>Cart</div>
               </div>
             )}
           </li>
