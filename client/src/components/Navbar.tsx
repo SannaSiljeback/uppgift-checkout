@@ -21,7 +21,7 @@ export const Navbar = () => {
 
   useEffect(() => {
     const authorize = async () => {
-      const response = await fetch("http://localhost:3001/api/auth/authorize", {
+      const response = await fetch("http://localhost:3001/auth/authorize", {
         credentials: "include",
       });
 

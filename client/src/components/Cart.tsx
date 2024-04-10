@@ -8,7 +8,7 @@ export const Cart = () => {
 
   return (
     <>
-      <h2>din kundkorg</h2>
+      <h2>Your cart</h2>
       <ul>
         {cart.map((product) => (
           <div key={product.product.id}>

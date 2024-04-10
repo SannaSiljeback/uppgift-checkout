@@ -25,7 +25,6 @@ export const Products = () => {
 
   return (
     <>
-      <h2>Products</h2>
       {products.map((product) => (
         <div key={product.id}>
           <h3>{product.name}</h3>

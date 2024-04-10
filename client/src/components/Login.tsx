@@ -12,7 +12,7 @@ export const Login = ({ setUser }: ILoginProps) => {
   const [errorMessage, setErrorMessage] = useState<string>("");
 
   const handleLogin = async () => {
-    const response = await fetch("http://localhost:3001/api/auth/login", {
+    const response = await fetch("http://localhost:3001/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

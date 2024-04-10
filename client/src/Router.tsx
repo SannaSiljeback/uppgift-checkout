@@ -14,7 +14,7 @@ export const Router = createBrowserRouter([{
             path: "/",
             element: <Home />,
             errorElement: <NotFound />,
-        }, //en payment sida? vilka sidor mer? kassa? shopping? cancelation? conditional rendering??
+        },
         {
             path: "/confirmation",
             element: <Confirmation />,

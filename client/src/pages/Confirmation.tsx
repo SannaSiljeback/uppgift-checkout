@@ -9,15 +9,11 @@ export const Confirmation = () => {
 
   useEffect(() => {
     if (!verified) {
-        console.log("verified körs");
-        
       const verifySession = async () => {
-        console.log("hoppar in i funktionen");
-
         let sessionId;
 
         const dataFromLs = localStorage.getItem("sessionId");
-        
+
         if (dataFromLs) {
           sessionId = JSON.parse(dataFromLs);
         }
@@ -40,15 +36,10 @@ export const Confirmation = () => {
           setIsLoading(false);
         }
 
-
-        
-        //clear cart funktion här
         if (data.verified) {
           localStorage.removeItem("sessionId");
           clearCart();
         }
-
-
       };
       verifySession();
     }
@@ -56,7 +47,7 @@ export const Confirmation = () => {
 
   return (
     <>
-      <h1>{verified && !isLoading ? "TACK FÖR DITT KÖP!!" : "loading...."}</h1>
+      <h1>{verified && !isLoading ? "Confirmation" : "Loading...."}</h1>
     </>
   );
 };
