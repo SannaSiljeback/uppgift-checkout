@@ -25,22 +25,24 @@ export const Products = () => {
 
   return (
     <>
-      {products.map((product) => (
-        <div key={product.id}>
-          <h3>{product.name}</h3>
-          <div>
-            <img
-              src={product.images[0]}
-              alt={product.name}
-              style={{ width: "200px" }}
-            />
+      <div className="productContainer">
+        {products.map((product) => (
+          <div key={product.id}>
+            <div className="productName">
+              <h3>{product.name}</h3>
+            </div>
+            <div className="imgContainer">
+              <img src={product.images[0]} alt={product.name} />
+            </div>
+            <div className="priceContainer">
+              <span>{product.default_price.unit_amount / 100} SEK</span>
+              <div onClick={() => addToCart(product)} className="buy">
+                <BsBagPlus />
+              </div>
+            </div>
           </div>
-          <span>{product.default_price.unit_amount / 100} SEK</span>
-          <div onClick={() => addToCart(product)} className="buy">
-            <BsBagPlus />
-          </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </>
   );
 };

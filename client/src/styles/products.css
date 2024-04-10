@@ -1,3 +1,36 @@
 .buy svg {
-    font-size: 25px;
+  font-size: 25px;
+}
+
+.productContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+img {
+  width: 64%;
+
+  object-fit: cover;
+  /* border-radius: 70px; */
+}
+
+.imgContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.priceContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4.2vw;
+  margin-top: 10px;
+}
+
+.productName {
+  display: flex;
+  justify-content: center;
 }
