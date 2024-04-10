@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
+import { useCart } from "../context/CartContext";
 
 export const Confirmation = () => {
   const [verified, setVerified] = useState(false);
   const [isLoading, setIsLoading] = useState(true); // inte perfekt att loading står hela tiden, men är så just nu
+
+  const { clearCart } = useCart();
 
   useEffect(() => {
     if (!verified) {
@@ -36,6 +39,16 @@ export const Confirmation = () => {
           setVerified(data.verified);
           setIsLoading(false);
         }
+
+
+        
+        //clear cart funktion här
+        if (data.verified) {
+          localStorage.removeItem("sessionId");
+          clearCart();
+        }
+
+
       };
       verifySession();
     }

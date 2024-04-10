@@ -1,4 +1,6 @@
 import { useCart } from "../context/CartContext";
+import { MdOutlineShoppingCartCheckout } from "react-icons/md";
+import "../styles/payment.css";
 
 export const Payment = () => {
   const { cart } = useCart();
@@ -23,7 +25,9 @@ export const Payment = () => {
 
   return (
     <>
-      <button onClick={handlePayment}>Köp kundkorgen</button>
+      <div onClick={handlePayment} className="checkout">
+        <MdOutlineShoppingCartCheckout />
+      </div>
     </>
   );
 };

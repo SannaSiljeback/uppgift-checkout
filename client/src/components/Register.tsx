@@ -1,8 +1,11 @@
 import { useState } from "react";
+import { BiUserCheck } from "react-icons/bi";
+import "../styles/register.css";
 
 export const Register = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [registerMessage, setRegisterMessage] = useState<string>("");
 
   const handleRegister = async () => {
     const response = await fetch("http://localhost:3001/api/auth/register", {
@@ -17,14 +20,23 @@ export const Register = () => {
     });
     const data = await response.json();
     console.log(data);
+
+    if (response.status === 201) {
+      setRegisterMessage("You're now registered!");
+      setEmail("");
+      setPassword("");
+    } else {
+      setRegisterMessage("User already exists");
+    }
   };
 
-  const handleEmail = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(event.target.value);
-  };
-
-  const handlePassword = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setPassword(event.target.value);
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+    if (name === "email") {
+      setEmail(value);
+    } else if (name === "password") {
+      setPassword(value);
+    }
   };
 
   return (
@@ -32,16 +44,21 @@ export const Register = () => {
       <input
         type="text"
         value={email}
-        onChange={handleEmail}
+        onChange={handleChange}
         placeholder="Email"
+        name="email"
       />
       <input
         type="password"
         value={password}
-        onChange={handlePassword}
+        onChange={handleChange}
         placeholder="Password"
+        name="password"
       />
-      <button onClick={handleRegister}>registrera</button>
+      <div onClick={handleRegister} className="register">
+        <BiUserCheck />
+      </div>
+      {registerMessage && <p>{registerMessage}</p>}
     </>
   );
 };
