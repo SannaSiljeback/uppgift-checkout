@@ -3,10 +3,25 @@
 }
 
 .cartContainer {
-    display: flex;
+    /* display: flex; */
     /* justify-content: flex-end; */
-    align-items: flex-end;
+    /* align-items: flex-end; */
+    
     flex-direction: column;
     padding-right: 30px;
+
+    
+    position: fixed; /* eller position: absolute; om du vill positionera den relativa till en förälder */
+   
+    right: 30px; /* Positionera kundvagnen till höger */
+    width: 300px; /* Ange en bredd för kundvagnen */
+    max-height: 70vh; /* Ange en maxhöjd för kundvagnen */
+    top: 120px;
+    background-color: white; /* Ange en bakgrundsfärg */
+    z-index: 1000; /* Sätt ett högt z-index för att säkerställa att kundvagnen visas ovanpå andra element */
+    overflow-y: auto; /* Tillåt scrollning inuti kundvagnen om innehållet är för högt */
+    padding: 20px; /* Lägg till padding för bättre layout */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Lägg till en skugga för att skilja kundvagnen från bakgrunden */
+
     
 }

@@ -56,7 +56,9 @@ export const Navbar = () => {
 
   return (
     <>
+    
       <nav>
+        <div className="navContainer">
         <ul>
           <li>
             <NavLink to="/" className="home">
@@ -97,6 +99,7 @@ export const Navbar = () => {
             )}
           </li>
         </ul>
+        </div>
       </nav>
       {!user && showLogin && <Login setUser={setUser} />}
       {!user && showRegister && <Register />}

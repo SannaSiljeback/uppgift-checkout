@@ -1,6 +1,13 @@
 nav {
   display: flex;
   justify-content: flex-end;
+  
+}
+
+.navContainer {
+  position: fixed;
+
+  /* z-index: 1000; ha denna? */
 }
 
 nav ul {
@@ -29,6 +36,7 @@ nav ul li a:hover {
 /* nav ul li a.active {
   text-decoration: underline;
 } */
+
 
 .login:hover,
 .register:hover,

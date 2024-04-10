@@ -17,7 +17,7 @@ export const Cart = () => {
             <img
               src={product.product.images[0]}
               alt={product.product.name}
-              style={{ width: "200px" }}
+              style={{ width: "80px" }}
             />
             <p>
               {product.quantity} st -{" "}
