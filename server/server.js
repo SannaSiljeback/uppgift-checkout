@@ -26,7 +26,6 @@ app.use(
   })
 );
 
-//ändra till samma, antingen api eller inte
 app.use("/users", userRouter);
 app.use("/auth", authRouter);
 app.use("/payments", stripeRouter);

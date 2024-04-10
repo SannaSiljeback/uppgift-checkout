@@ -35,7 +35,6 @@ export const Navbar = () => {
     authorize();
   }, []);
 
-  //slå ihop dessa funktioner till en?
   const toggleLogin = () => {
     setShowLogin(!showLogin);
   };
