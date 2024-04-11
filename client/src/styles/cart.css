@@ -1,9 +1,14 @@
 .delete svg {
-  font-size: 25px;
+  font-size: 1.5em;
 }
 .delete {
   display: flex;
   align-items: flex-end;
+}
+
+.delete:hover {
+  cursor: pointer;
+
 }
 
 .quantity {

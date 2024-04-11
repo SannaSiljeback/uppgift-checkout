@@ -1,6 +1,7 @@
 import { useState } from "react";
-import "../styles/login.css";
+// import "../styles/login.css";
 import { CiLogin } from "react-icons/ci";
+import "../styles/loginRegister.css";
 
 interface ILoginProps {
   setUser: (user: string) => void;
@@ -44,7 +45,7 @@ export const Login = ({ setUser }: ILoginProps) => {
 
   return (
     <>
-    <div className="formContainer">
+    <div className="formContainerLogin">
       <input
         type="text"
         value={email}
@@ -59,7 +60,7 @@ export const Login = ({ setUser }: ILoginProps) => {
         placeholder="Password"
         name="password"
       />
-      <div onClick={handleLogin} className="loginButton">
+      <div onClick={handleLogin} className="button">
         <CiLogin className="icon"/>
       </div>
       {errorMessage && <p>{errorMessage}</p>}

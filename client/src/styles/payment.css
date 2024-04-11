@@ -1,8 +1,13 @@
 .checkout svg {
-    font-size: 30px;
+    font-size: 2em;
 }
 
 .checkout {
     display: flex;
     justify-content: flex-end;
 }
+
+.checkout:hover {
+    cursor: pointer;
+  
+  }

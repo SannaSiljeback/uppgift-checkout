@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { BiUserCheck } from "react-icons/bi";
-import "../styles/register.css";
+import "../styles/loginRegister.css";
 
 export const Register = () => {
   const [email, setEmail] = useState<string>("");
@@ -41,7 +41,7 @@ export const Register = () => {
 
   return (
     <>
-    <div className="formContainer">
+    <div className="formContainerRegister">
       <input
         type="text"
         value={email}
@@ -56,7 +56,7 @@ export const Register = () => {
         placeholder="Password"
         name="password"
       />
-      <div onClick={handleRegister} className="registerButton">
+      <div onClick={handleRegister} className="button">
         <BiUserCheck className="icon"/>
       </div>
       {registerMessage && <p>{registerMessage}</p>}

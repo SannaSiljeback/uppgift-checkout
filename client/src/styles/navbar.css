@@ -1,21 +1,27 @@
 nav {
   display: flex;
   justify-content: flex-end;
+
+  
   
 }
 
 .navContainer {
   position: fixed;
 
-  /* z-index: 1000; ha denna? */
+  z-index: 1000; 
+  background-color: #956B4B;
+  height: 70px;
+  border-radius: 70px;
 }
 
 nav ul {
-  height: 100px;
+  height: 0px;
   list-style-type: none;
   margin: 10px;
   display: flex;
   align-items: center;
+  padding-top: 25px;
 }
 
 nav ul li {
@@ -45,15 +51,16 @@ nav ul li a:hover {
 }
 
 .home svg {
-  font-size: 30px;
+  font-size: 1.9em;
+  
 }
 
 .login svg {
-  font-size: 30px;
+  font-size: 1.9em;
 }
 
 .register svg {
-  font-size: 30px;
+  font-size: 1.9em;
 }
 
 .cart {
