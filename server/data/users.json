@@ -5,48 +5,9 @@
     "stripeId": "cus_PruslmAylNykoy"
   },
   {
-    "email": "sanna.s@sanna.se",
-    "password": "$2b$10$OBOwM3KebxHhrrfMGrWfNe1VSQQ16s4HkRuwy/G9sp73B8W5VL9yW",
-    "stripeId": "cus_PtkPH76S11EEvg"
-  },
-  {
     "email": "hej@hej.hej",
     "password": "$2b$10$Av6.ppZTr/JLpVgzs0ULCuwW2jDC5yYddy8gJACtUR2lqfraFAViu",
     "stripeId": "cus_PtlewkYrYQJn40"
-  },
-  {
-    "email": "hejsan@hejsan.hej",
-    "password": "$2b$10$wBI5OawHcpchg/0Uqz79MuINhOH5.5extSJkZjzfblkKQn1qsPAWq",
-    "stripeId": "cus_PtlmSEPp0BK6YG"
-  },
-  {
-    "email": "hejsan@hej.hej",
-    "password": "$2b$10$HclRZOgJ3uVeYEfaVLVUh.z8X2YPC.TsYuoHtI7a8.xap1Ygb2aF6",
-    "stripeId": "cus_PtlnE4VpDrLpD3"
-  },
-  {
-    "email": "hej@hejsan.se",
-    "password": "$2b$10$h7JLnQQWMJIBU3WuxIXYeOUd2TiE8CaTD0yykz929J6fYRxoXK7Cq",
-    "stripeId": "cus_PtlqG1tf1cb17o"
-  },
-  {
-    "email": "sanna@sannas.se",
-    "password": "$2b$10$OqbJKceYxrdRLquXMR8r9eKhF9OK9kt2/Ga2Bn.oo4yTd.o3q1Wf6",
-    "stripeId": "cus_PtlsNYmUHAFwNT"
-  },
-  {
-    "email": "sannas@sannas.se",
-    "password": "$2b$10$.7yfKtNRZizHMyoyZDdO.egQBjCPrJuucI.rigWOedHoaIsUOeaa2",
-    "stripeId": "cus_Ptls8QOlXNBUMm"
-  },
-  {
-    "email": "sannasa@sannas.se",
-    "password": "$2b$10$AOv2VKUy1NRs7uoN8CL9SORfyuckxAEo02y2QEF9EFOqPQRECDzTe",
-    "stripeId": "cus_PtltgwBXoFHFpy"
-  },
-  {
-    "email": "sannasas@sannas.se",
-    "password": "$2b$10$UZPeLlXYWlrEtA5LcpJHRewdyd6i8AZ5cC9agrkPJj.VfDRZ3xOLy",
-    "stripeId": "cus_Ptlter2uTDrw8U"
   }
+  
 ]

@@ -1,4 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Quattrocento:wght@400;700&display=swap');
+
 :root {
+  /* font-family: "Cinzel", serif; */
+  font-family: "Quattrocento", serif;
+
+  background-color: #956B4B;
+
+}
+
+
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -65,4 +76,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */

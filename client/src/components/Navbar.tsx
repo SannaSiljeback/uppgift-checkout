@@ -19,9 +19,16 @@ export const Navbar = () => {
   const [showRegister, setShowRegister] = useState(false);
   const [showCart, setShowCart] = useState(false);
 
+  const [cartQuantity, setCartQuantity] = useState(0);
+
+  useEffect(() => {
+    const totalQuantity = cart.reduce((acc, item) => acc + item.quantity, 0);
+    setCartQuantity(totalQuantity);
+  }, [cart]);
+
   useEffect(() => {
     const authorize = async () => {
-      const response = await fetch("http://localhost:3001/api/auth/authorize", {
+      const response = await fetch("http://localhost:3001/auth/authorize", {
         credentials: "include",
       });
 
@@ -35,7 +42,6 @@ export const Navbar = () => {
     authorize();
   }, []);
 
-  //slå ihop dessa funktioner till en?
   const toggleLogin = () => {
     setShowLogin(!showLogin);
   };
@@ -48,27 +54,23 @@ export const Navbar = () => {
     setShowCart(!showCart);
   };
 
-  
-  //om all quantity ska visas så ska det vara en reduce på p taggen med cart.length eller något liknande
   return (
     <>
+    
       <nav>
+        <div className="navContainer">
         <ul>
           <li>
             <NavLink to="/" className="home">
               <BiSolidCoffeeBean />
-              <div>
-                  Home
-                </div>
+              <div>Home</div>
             </NavLink>
           </li>
           <li>
             {!user ? (
               <div onClick={toggleLogin} className="login">
                 <AiOutlineUser />
-                <div>
-                  Log in
-                </div>
+                <div>Log in</div>
               </div>
             ) : (
               <>
@@ -82,9 +84,7 @@ export const Navbar = () => {
             {!user && (
               <div onClick={toggleRegister} className="register">
                 <AiOutlineUserAdd />
-                <div>
-                  Register
-                </div>
+                <div>Register</div>
               </div>
             )}
           </li>
@@ -93,14 +93,13 @@ export const Navbar = () => {
             {user && (
               <div className="cart" onClick={toggleCart}>
                 <CiShoppingBasket />
-                <p>{cart.length}</p>
-                <div>
-                  Cart
-                </div>
+                <p>{cartQuantity}</p>
+                <div>Cart</div>
               </div>
             )}
           </li>
         </ul>
+        </div>
       </nav>
       {!user && showLogin && <Login setUser={setUser} />}
       {!user && showRegister && <Register />}

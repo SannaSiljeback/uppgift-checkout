@@ -1,3 +1,71 @@
 .delete svg {
-    font-size: 25px;
+  font-size: 1.5em;
+}
+.delete {
+  display: flex;
+  align-items: flex-end;
+}
+
+.delete:hover {
+  cursor: pointer;
+
+}
+
+.quantity {
+  display: flex;
+  align-items: flex-end;
+  margin: 0 10px;
+
+
+}
+
+.bigCartContainer {
+  flex-direction: column;
+  padding-right: 30px;
+
+  position: fixed; /* eller position: absolute; om du vill positionera den relativa till en förälder */
+
+  right: 30px; /* Positionera kundvagnen till höger */
+  width: 300px; /* Ange en bredd för kundvagnen */
+  max-height: 70vh; /* Ange en maxhöjd för kundvagnen */
+  top: 120px;
+  background-color: white; /* Ange en bakgrundsfärg */
+  z-index: 1000; /* Sätt ett högt z-index för att säkerställa att kundvagnen visas ovanpå andra element */
+  overflow-y: auto; /* Tillåt scrollning inuti kundvagnen om innehållet är för högt */
+  padding: 20px; /* Lägg till padding för bättre layout */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Lägg till en skugga för att skilja kundvagnen från bakgrunden */
+
+  background-color: #A37552;
+
+  border-radius: 20px;
+}
+
+.bigCartContainer::-webkit-scrollbar {
+  background-color: #442810; /* Ange en bakgrundsfärg för hela scrollbaren */
+ }
+ 
+ .bigCartContainer::-webkit-scrollbar-track {
+  background: #66503D; /* Färgen på rullningslistens spår */
+ }
+ 
+ .bigCartContainer::-webkit-scrollbar-thumb {
+  background: #B4987E; /* Färgen på rullningslistens tumme */
+  border-radius: 6px; /* Avrunda tummens hörn */
+ }
+ 
+ 
+
+.smallCartContainer {
+  margin: 35px 0;
+}
+
+ul {
+  padding: 0;
+}
+
+.itemContainer {
+  display: flex;
+  /* flex-direction: column; */
+
+  margin-bottom: 20px;
 }

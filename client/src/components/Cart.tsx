@@ -8,28 +8,35 @@ export const Cart = () => {
 
   return (
     <>
-      <h2>din kundkorg</h2>
+    <div className="bigCartContainer">
+      <h2>Your coffee cart</h2>
       <ul>
+        
         {cart.map((product) => (
-          <div key={product.product.id}>
+          
+          <div key={product.product.id} className="smallCartContainer">
             <h3>{product.product.name}</h3>
+            <div className="itemContainer">
             <img
               src={product.product.images[0]}
               alt={product.product.name}
-              style={{ width: "200px" }}
+              style={{ width: "80px" }}
             />
-            <p>
+            <p className="quantity">
               {product.quantity} st -{" "}
               {product.product.default_price.unit_amount / 100} SEK
             </p>
             <div onClick={() => removeFromCart(product.product)} className="delete">
               <AiOutlineDelete />
             </div>
+            </div>
           </div>
         ))}
+      
       </ul>
 
       <Payment />
+      </div>
     </>
   );
 };

@@ -7,7 +7,7 @@ interface ILogoutProps {
 
 export const Logout = ({setUser}: ILogoutProps) => {
     const handleLogout = async () => {
-        const response = await fetch("http://localhost:3001/api/auth/logout", {
+        const response = await fetch("http://localhost:3001/auth/logout", {
           method: "POST",
           credentials: "include",
         });

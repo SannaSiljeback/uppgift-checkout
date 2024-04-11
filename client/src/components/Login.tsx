@@ -1,6 +1,7 @@
 import { useState } from "react";
-import "../styles/login.css";
+// import "../styles/login.css";
 import { CiLogin } from "react-icons/ci";
+import "../styles/loginRegister.css";
 
 interface ILoginProps {
   setUser: (user: string) => void;
@@ -12,7 +13,7 @@ export const Login = ({ setUser }: ILoginProps) => {
   const [errorMessage, setErrorMessage] = useState<string>("");
 
   const handleLogin = async () => {
-    const response = await fetch("http://localhost:3001/api/auth/login", {
+    const response = await fetch("http://localhost:3001/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -44,6 +45,7 @@ export const Login = ({ setUser }: ILoginProps) => {
 
   return (
     <>
+    <div className="formContainerLogin">
       <input
         type="text"
         value={email}
@@ -58,10 +60,11 @@ export const Login = ({ setUser }: ILoginProps) => {
         placeholder="Password"
         name="password"
       />
-      <div onClick={handleLogin} className="login">
-        <CiLogin />
+      <div onClick={handleLogin} className="button">
+        <CiLogin className="icon"/>
       </div>
       {errorMessage && <p>{errorMessage}</p>}
+      </div>
     </>
   );
 };

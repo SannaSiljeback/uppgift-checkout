@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { BiUserCheck } from "react-icons/bi";
-import "../styles/register.css";
+import "../styles/loginRegister.css";
 
 export const Register = () => {
   const [email, setEmail] = useState<string>("");
@@ -8,7 +8,7 @@ export const Register = () => {
   const [registerMessage, setRegisterMessage] = useState<string>("");
 
   const handleRegister = async () => {
-    const response = await fetch("http://localhost:3001/api/auth/register", {
+    const response = await fetch("http://localhost:3001/auth/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -41,6 +41,7 @@ export const Register = () => {
 
   return (
     <>
+    <div className="formContainerRegister">
       <input
         type="text"
         value={email}
@@ -55,10 +56,11 @@ export const Register = () => {
         placeholder="Password"
         name="password"
       />
-      <div onClick={handleRegister} className="register">
-        <BiUserCheck />
+      <div onClick={handleRegister} className="button">
+        <BiUserCheck className="icon"/>
       </div>
       {registerMessage && <p>{registerMessage}</p>}
+      </div>
     </>
   );
 };

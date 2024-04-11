@@ -28,14 +28,14 @@ interface ICartContext {
   clearCart: () => void;
 }
 
-const initalValues = {
+const initialValues = {
   cart: [],
   addToCart: () => {},
   removeFromCart: () => {},
   clearCart: () => {},
 };
 
-const CartContext = createContext<ICartContext>(initalValues);
+const CartContext = createContext<ICartContext>(initialValues);
 
 export const useCart = () => useContext(CartContext);
 

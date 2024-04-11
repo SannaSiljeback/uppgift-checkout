@@ -10,27 +10,25 @@ const productsRouter = require("./resources/products/products.router");
 
 const app = express();
 
-app.use(cors({
-  origin: "http://localhost:5173",
-  credentials: true
-}));
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+    credentials: true,
+  })
+);
 
-//för att parsea bodyn
 app.use(express.json());
 app.use(
   cookieSession({
     name: "session",
     secret: "secretKey",
-    maxAge: 1000 * 60 * 60, //1 timme
+    maxAge: 1000 * 60 * 60,
   })
 );
 
-//ändra till samma, antingen api eller inte
-app.use("/api/users", userRouter);
-app.use("/api/auth", authRouter);
+app.use("/users", userRouter);
+app.use("/auth", authRouter);
 app.use("/payments", stripeRouter);
 app.use("/products", productsRouter);
 
-
-
-app.listen(3001, () => console.log("Server up and running!"));
+app.listen(3001, () => console.log("Server is up and running!"));
