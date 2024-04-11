@@ -1,5 +1,6 @@
 .delete svg {
   font-size: 1.5em;
+  /* font 25 */
 }
 .delete {
   display: flex;
@@ -34,7 +35,7 @@
 }
 
 .bigCartContainer::-webkit-scrollbar {
-  background-color: #442810;
+  background-color: #66503d;
 }
 
 .bigCartContainer::-webkit-scrollbar-track {
@@ -43,7 +44,7 @@
 
 .bigCartContainer::-webkit-scrollbar-thumb {
   background: #b4987e;
-  border-radius: 6px;
+  border-radius: 10px;
 }
 
 .smallCartContainer {

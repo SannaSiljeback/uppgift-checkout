@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { useCart } from "../context/CartContext";
+import "../styles/confirmation.css";
+import { GiCoffeeBeans } from "react-icons/gi";
 
 export const Confirmation = () => {
   const [verified, setVerified] = useState(false);
@@ -47,7 +49,9 @@ export const Confirmation = () => {
 
   return (
     <>
-      <h1>{verified && !isLoading ? "Confirmation" : "Loading...."}</h1>
+    <div className="confirmation">
+      <h1>{verified && !isLoading ? "Thank you for your purchase" : "Loading...."} <GiCoffeeBeans /></h1>
+      </div>
     </>
   );
 };
