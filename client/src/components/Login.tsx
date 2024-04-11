@@ -1,5 +1,4 @@
 import { useState } from "react";
-// import "../styles/login.css";
 import { CiLogin } from "react-icons/ci";
 import "../styles/loginRegister.css";
 

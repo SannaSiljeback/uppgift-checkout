@@ -13,12 +13,10 @@ import { AiOutlineUserAdd } from "react-icons/ai";
 
 export const Navbar = () => {
   const { cart } = useCart();
-
   const [user, setUser] = useState<string>("");
   const [showLogin, setShowLogin] = useState(false);
   const [showRegister, setShowRegister] = useState(false);
   const [showCart, setShowCart] = useState(false);
-
   const [cartQuantity, setCartQuantity] = useState(0);
 
   useEffect(() => {

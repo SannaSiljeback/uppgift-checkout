@@ -5,7 +5,7 @@ import { GiCoffeeBeans } from "react-icons/gi";
 
 export const Confirmation = () => {
   const [verified, setVerified] = useState(false);
-  const [isLoading, setIsLoading] = useState(true); // inte perfekt att loading står hela tiden, men är så just nu
+  const [isLoading, setIsLoading] = useState(true);
 
   const { clearCart } = useCart();
 

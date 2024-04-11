@@ -5,5 +5,4 @@ const router = express.Router();
 
 router.get("/", loggedIn, getUsers);
 
-
 module.exports = router;

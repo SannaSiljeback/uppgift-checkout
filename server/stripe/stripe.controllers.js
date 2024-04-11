@@ -4,7 +4,6 @@ const fs = require("fs").promises;
 
 const createCheckoutSession = async (req, res) => {
   const cart = req.body;
-
   const stripe = initStripe();
 
   const session = await stripe.checkout.sessions.create({
@@ -27,7 +26,6 @@ const verifySession = async (req, res) => {
   const stripe = initStripe();
 
   const sessionId = req.body.sessionId;
-
   const session = await stripe.checkout.sessions.retrieve(sessionId);
 
   if (session.payment_status === "paid") {
@@ -40,11 +38,10 @@ const verifySession = async (req, res) => {
       total: session.amount_total,
       date: new Date(),
     };
-
     const orders = JSON.parse(await fs.readFile("./data/orders.json"));
     orders.push(order);
-    await fs.writeFile("./data/orders.json", JSON.stringify(orders, null, 4));
 
+    await fs.writeFile("./data/orders.json", JSON.stringify(orders, null, 4));
     res.status(200).json({ verified: true });
   }
 
