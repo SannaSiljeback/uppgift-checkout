@@ -32,7 +32,7 @@ export const Products = () => {
               <p>{product.name}</p>
             </div>
             <div className="imgContainer">
-              <img src={product.images[0]} alt={product.name} />
+              <img src={product.images[0]} alt={product.name}  />
             </div>
             <div className="priceContainer">
               <span>{product.default_price.unit_amount / 100} SEK</span>

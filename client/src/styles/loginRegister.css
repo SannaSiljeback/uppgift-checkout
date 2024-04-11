@@ -2,10 +2,6 @@
   font-size: 2em;
 }
 
-/* .loginButton:hover {
-    text-decoration: underline;
-  } */
-
 .button {
   display: flex;
   justify-content: center;
@@ -24,16 +20,13 @@
   margin-right: 35px;
   padding-top: 8px;
   padding-bottom: 8px;
-
   position: fixed;
   right: 2%;
   top: 11%;
   z-index: 1000;
-
   background-color: #956b4b;
   width: 390px;
   border-radius: 20px;
-
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -49,7 +42,6 @@
   width: 390px;
   border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-
   position: fixed;
   right: 2%;
   top: 18%;
@@ -61,6 +53,5 @@ input {
   border-radius: 5px;
   height: 23px;
   background-color: #cab6a5;
-  
   border-color: #403226;
 }
