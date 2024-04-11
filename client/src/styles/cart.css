@@ -59,3 +59,44 @@ ul {
   display: flex;
   margin-bottom: 20px;
 }
+
+.quantityContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+@media screen and (max-width: 1200px) {
+  .bigCartContainer {
+    width: 270px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .bigCartContainer {
+    width: 230px;
+  }
+  .itemContainer {
+    display: block;
+  }
+  .delete {
+    padding-right: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .bigCartContainer {
+    width: 190px;
+  }
+  .delete {
+    padding-right: 0px;
+  }
+ 
+}
+
+@media screen and (max-width: 576px) {
+  .bigCartContainer {
+    width: 140px;
+  }
+
+}
