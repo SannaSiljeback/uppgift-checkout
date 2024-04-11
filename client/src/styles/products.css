@@ -1,11 +1,9 @@
 .buy svg {
   font-size: 1.5em;
-
 }
 
 .buy:hover {
   cursor: pointer;
-
 }
 
 .productContainer {
@@ -14,13 +12,14 @@
   gap: 20px;
   justify-content: center;
   padding: 20px;
+  margin-top: 20px;
 }
 
 img {
   width: 64%;
 
   object-fit: cover;
-  /* border-radius: 70px; */
+  border-radius: 15px;
 }
 
 .imgContainer {
@@ -39,4 +38,12 @@ img {
 .productName {
   display: flex;
   justify-content: center;
+}
+
+p {
+  font-size: 1.3em;
+}
+
+span {
+  font-size: 1.1em;
 }

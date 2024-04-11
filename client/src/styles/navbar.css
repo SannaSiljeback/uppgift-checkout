@@ -1,16 +1,13 @@
 nav {
   display: flex;
   justify-content: flex-end;
-
-  
-  
 }
 
 .navContainer {
   position: fixed;
 
-  z-index: 1000; 
-  background-color: #956B4B;
+  z-index: 1000;
+  background-color: #956b4b;
   height: 70px;
   border-radius: 70px;
 }
@@ -41,7 +38,6 @@ nav ul li a:hover {
   text-decoration: underline;
 } */
 
-
 .login:hover,
 .register:hover,
 .logout:hover,
@@ -52,7 +48,6 @@ nav ul li a:hover {
 
 .home svg {
   font-size: 1.9em;
-  
 }
 
 .login svg {
@@ -68,7 +63,7 @@ nav ul li a:hover {
 }
 
 .cart svg {
-  font-size: 37px;
+  font-size: 2.3em;
 }
 
 .cart p {
@@ -77,11 +72,12 @@ nav ul li a:hover {
   top: -2px;
   background-color: rgb(16, 16, 16);
   color: white;
-  height: 0.2rem;
-  width: 0.2rem;
+  height: 0.1rem;
+  width: 0.1rem;
   padding: 10px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 1.1em;
 }
