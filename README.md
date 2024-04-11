@@ -1,8 +1,10 @@
 
-![Skärmbild 2024-04-11 190017](https://github.com/SannaSiljeback/uppgift-checkout/assets/144778923/685ec2dc-0ac0-42ae-9353-fe7c7846ca8c)
+![Skärmbild 2024-04-11 223251](https://github.com/SannaSiljeback/uppgift-checkout/assets/144778923/9da673dd-1445-4166-b555-1f842ec82053)
+
 
 # uppgift-checkout
-A fullstack webshop app with Stripe integration.
+This is a fullstack webshop application with Stripe integration.
+Users can browse products, add them to their cart and purchase them using Stripe's payment integration. The app also includes user authentication functionality, allowing users to register, login, and logout.
 
 ## Packages used
 * React
@@ -11,14 +13,14 @@ A fullstack webshop app with Stripe integration.
 * Typescript
 
 ## Key Features
-* User login and registration.
-* Product listing.
-* Ability to add products to a shopping cart.
-* Shopping cart functionality.
-* Ability to place an order, payment with Stripe integration.
+* User authentication with registration, login, and logout.
+* Product listing with the ability to browse and add products to the shopping cart.
+* Shopping cart functionality to manage selected items.
+* Order placement and payment processing using Stripe integration.
+
 
 ## Set up
-* Before starting, ensure you have Node.js installed. You also need a Stripe account to use your own API-key, and your own products in your own shop in Stripe.
+* Before getting started, make sure you have Node.js installed. Additionally, you'll need a Stripe account to obtain your API key and set up your own products within your Stripe shop.
 
 * Clone repository from [Github](https://github.com/SannaSiljeback/uppgift-checkout/)
 * Navigate to the project directory.
